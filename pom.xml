@@ -1,10 +1,12 @@
 <?xml version="1.0"?>
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
   <modelVersion>4.0.0</modelVersion>
   <groupId>br.com.marcelbraghini</groupId>
   <artifactId>integrations</artifactId>
   <version>0.1.0-SNAPSHOT</version>
+
   <properties>
     <compiler-plugin.version>3.8.1</compiler-plugin.version>
     <maven.compiler.parameters>true</maven.compiler.parameters>
@@ -12,12 +14,15 @@
     <maven.compiler.target>11</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <quarkus-plugin.version>1.6.1.Final</quarkus-plugin.version>
+    <quarkus-plugin.version>1.11.3.Final</quarkus-plugin.version>
     <quarkus.platform.artifact-id>quarkus-universe-bom</quarkus.platform.artifact-id>
     <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
-    <quarkus.platform.version>1.6.1.Final</quarkus.platform.version>
+    <quarkus.platform.version>1.11.3.Final</quarkus.platform.version>
     <surefire-plugin.version>2.22.1</surefire-plugin.version>
+    <quarkus.cxf.version>0.5</quarkus.cxf.version>
+    <cxf.version>3.4.2</cxf.version>
   </properties>
+
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -29,6 +34,7 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+
   <dependencies>
     <dependency>
       <groupId>io.quarkus</groupId>
@@ -36,21 +42,47 @@
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-resteasy-jackson</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-rest-client</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-rest-client-jackson</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-arc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
       <artifactId>quarkus-junit5</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>io.rest-assured</groupId>
-      <artifactId>rest-assured</artifactId>
-      <scope>test</scope>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-smallrye-fault-tolerance</artifactId>
     </dependency>
     <dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-resteasy-jaxb</artifactId>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-smallrye-health</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-scheduler</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkiverse.cxf</groupId>
+      <artifactId>quarkus-cxf</artifactId>
+      <version>${quarkus.cxf.version}</version>
     </dependency>
   </dependencies>
+
   <build>
     <plugins>
+
       <plugin>
         <groupId>io.quarkus</groupId>
         <artifactId>quarkus-maven-plugin</artifactId>
@@ -63,6 +95,41 @@
           </execution>
         </executions>
       </plugin>
+
+     <!-- Plugin para gerar as classes do wsdl, para gerar novamente remover o none -->
+      <plugin>
+        <groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-codegen-plugin</artifactId>
+        <version>${cxf.version}</version>
+        <executions>
+          <execution>
+            <id>generate-sources-correios</id>
+<!--            <phase>generate-sources</phase>-->
+            <phase>none</phase>
+            <configuration>
+              <sourceRoot>${basedir}/src/main/java</sourceRoot>
+              <defaultOptions>
+                <noAddressBinding>true</noAddressBinding>
+              </defaultOptions>
+              <wsdlOptions>
+                <wsdlOption>
+                  <wsdl>${basedir}/src/main/resources/wsdl/AtendeCliente.wsdl</wsdl>
+                  <wsdlLocation>classpath:wsdl/AtendeCliente.wsdl</wsdlLocation>
+                  <packagenames>
+                    <packagename>
+                      br.com.marcelbraghini.infrastructure.correios.atendecliente
+                    </packagename>
+                  </packagenames>
+                </wsdlOption>
+              </wsdlOptions>
+            </configuration>
+            <goals>
+              <goal>wsdl2java</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>${compiler-plugin.version}</version>
@@ -77,6 +144,7 @@
           </systemPropertyVariables>
         </configuration>
       </plugin>
+
     </plugins>
   </build>
   <profiles>

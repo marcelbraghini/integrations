@@ -1,14 +1,29 @@
-# integrations project
+# Integrations project
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+This project uses Quarkus.
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+### Adress from correios using SOAP with cxf quarkus
+
+Routes:
+```cmd
+curl --location --request GET 'localhost:8080/v1/endereco/89805350'
+```
 
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:
-```
+```cmd
 ./mvnw quarkus:dev
+```
+
+You can run your application in test mode using variables from application.properties %test:
+```cmd
+mvn quarkus:dev -Dquarkus.profile=test
+```
+
+You can run test with:
+```cmd
+./mvnw test
 ```
 
 ## Packaging and running the application
@@ -19,16 +34,11 @@ Be aware that it’s not an _über-jar_ as the dependencies are copied into the 
 
 The application is now runnable using `java -jar target/integrations-0.1.0-SNAPSHOT-runner.jar`.
 
-## Creating a native executable
+### Generate class from wsdl
 
-You can create a native executable using: `./mvnw package -Pnative`.
+All configurations they are at the cxf-codegen-plugin in pom.xml
+For generate class from wsld you need run:
 
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using: `./mvnw package -Pnative -Dquarkus.native.container-build=true`.
-
-You can then execute your native executable with: `./target/integrations-0.1.0-SNAPSHOT-runner`
-
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/building-native-image.
-
-
-### Clean architecture
-https://pusher.com/tutorials/clean-architecture-introduction
+```cmd
+.mvnw compile
+```
