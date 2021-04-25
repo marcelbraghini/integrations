@@ -9,6 +9,10 @@ public class EnderecoErpException extends RuntimeException{
         this.cep = cep;
     }
 
+    public EnderecoErpException() {
+        this.cep = "";
+    }
+
     public String getCepWhenThrown() {
         return cep;
     }

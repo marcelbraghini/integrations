@@ -1,6 +1,7 @@
 package br.com.marcelbraghini.adapters.controller;
 
 import br.com.marcelbraghini.entities.endereco.Endereco;
+import br.com.marcelbraghini.entities.exceptions.EnderecoErpException;
 import br.com.marcelbraghini.infrastructure.correios.atendecliente.EnderecoERP;
 import br.com.marcelbraghini.usecases.endereco.EnderecoUsecase;
 import org.eclipse.microprofile.faulttolerance.Retry;
@@ -24,7 +25,7 @@ public class EnderecoResource {
     private static final Logger logger = Logger.getLogger(EnderecoResource.class);
 
     @Inject
-    private EnderecoUsecase enderecoUsecase;
+    EnderecoUsecase enderecoUsecase;
 
     @GET
     @Path("/{cep}")
@@ -43,6 +44,10 @@ public class EnderecoResource {
     }
 
     private Endereco convertToEndereco(final EnderecoERP enderecoERP){
+        if (enderecoERP == null) {
+            throw new EnderecoErpException();
+        }
+
         return new Endereco.Builder(enderecoERP.getCep())
                             .withEndereco(enderecoERP.getEnd())
                             .withComplemento(enderecoERP.getComplemento2())
