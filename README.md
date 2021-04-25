@@ -9,6 +9,11 @@ Routes:
 curl --location --request GET 'localhost:8080/v1/endereco/89805350'
 ```
 
+Swagger:
+```cmd
+http://localhost:8080/swagger/
+```
+
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:
