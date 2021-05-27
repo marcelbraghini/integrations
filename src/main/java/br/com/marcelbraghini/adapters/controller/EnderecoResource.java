@@ -15,7 +15,10 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.Arrays;
 import java.util.Objects;
+
+import static java.lang.String.format;
 
 @Path("/v1/endereco")
 @Produces(MediaType.APPLICATION_JSON)
@@ -31,16 +34,29 @@ public class EnderecoResource {
     @Path("/{cep}")
     @Retry(maxRetries = 3, delay = 3000)
     public Response getEndereco(@PathParam("cep") String cep) {
+        try {
+            final EnderecoERP enderecoERP = enderecoUsecase.getEnderecoERP(cep);
 
-        final Endereco endereco = convertToEndereco(enderecoUsecase.getEnderecoERP(cep));
+            if (Objects.isNull(enderecoERP)){
+                return Response.status(Response.Status.NO_CONTENT).build();
+            }
 
-        if (Objects.isNull(endereco)){
-            return Response.status(Response.Status.NO_CONTENT).build();
+            final Endereco endereco = convertToEndereco(enderecoERP);
+
+            logger.info(format("[EnderecoResource:getEndereco] For the cep %s = %s", cep, endereco));
+
+            return Response.ok(endereco).build();
+        } catch (final EnderecoErpException e) {
+            logger.error(format("[EnderecoResource:getEndereco] EnderecoErpException for the cep %s with error: %s",
+                    e.getCepWhenThrown(), e.getMessage()));
+//            e.printStackTrace();
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
+        } catch (final Exception e) {
+            logger.error(format("[EnderecoResource:getEndereco] Exception for the cep %s with error: %s",
+                    cep, e.getMessage()));
+//            e.printStackTrace();
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
-
-        logger.info(String.format("[EnderecoResource:getEndereco] For the cep %s = %s", cep, endereco));
-
-        return Response.ok(endereco).build();
     }
 
     private Endereco convertToEndereco(final EnderecoERP enderecoERP){

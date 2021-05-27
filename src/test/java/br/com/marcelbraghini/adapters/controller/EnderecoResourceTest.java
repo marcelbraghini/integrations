@@ -13,7 +13,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import javax.ws.rs.core.Response;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
@@ -49,8 +48,28 @@ public class EnderecoResourceTest {
 
     @Test
     public void shouldReturnThrownEnderecoErpException() {
+        when(enderecoUsecase.getEnderecoERP(anyString())).thenThrow(new EnderecoErpException());
+
+        Response response = enderecoResource.getEndereco("88888888");
+
+        assertEquals(Response.Status.INTERNAL_SERVER_ERROR, response.getStatusInfo());
+    }
+
+    @Test
+    public void shouldReturnThrownException() {
+        when(enderecoUsecase.getEnderecoERP(anyString())).thenThrow(new RuntimeException());
+
+        Response response = enderecoResource.getEndereco("88888888");
+
+        assertEquals(Response.Status.INTERNAL_SERVER_ERROR, response.getStatusInfo());
+    }
+
+    @Test
+    public void shouldReturnNoContent() {
         when(enderecoUsecase.getEnderecoERP(anyString())).thenReturn(null);
 
-        assertThrows(EnderecoErpException.class, () -> enderecoResource.getEndereco("88888888"));
+        Response response = enderecoResource.getEndereco("88888888");
+
+        assertEquals(Response.Status.NO_CONTENT, response.getStatusInfo());
     }
 }
