@@ -5,10 +5,10 @@ import br.com.marcelbraghini.infrastructure.correios.atendecliente.AtendeCliente
 import br.com.marcelbraghini.infrastructure.correios.atendecliente.EnderecoERP;
 import io.quarkiverse.cxf.annotation.CXFClient;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
-import javax.inject.Singleton;
 
-@Singleton
+@ApplicationScoped
 public class EnderecoUsecase {
 
     @Inject

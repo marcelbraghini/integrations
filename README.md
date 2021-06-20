@@ -4,6 +4,8 @@ This project uses Quarkus.
 
 ### Adress from correios using SOAP with cxf quarkus
 
+WSDL: https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente?wsdl
+
 Routes:
 ```cmd
 curl --location --request GET 'localhost:8080/v1/endereco/89805350'
