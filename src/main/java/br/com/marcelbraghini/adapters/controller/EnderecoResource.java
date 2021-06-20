@@ -15,7 +15,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.Arrays;
 import java.util.Objects;
 
 import static java.lang.String.format;
@@ -47,14 +46,12 @@ public class EnderecoResource {
 
             return Response.ok(endereco).build();
         } catch (final EnderecoErpException e) {
-            logger.error(format("[EnderecoResource:getEndereco] EnderecoErpException for the cep %s with error: %s",
-                    e.getCepWhenThrown(), e.getMessage()));
-//            e.printStackTrace();
+            logger.error(format("[EnderecoResource:getEndereco] EnderecoErpException for the cep %s with error: %s Thrown: ",
+                    e.getCepWhenThrown(), e.getMessage()), e);
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         } catch (final Exception e) {
-            logger.error(format("[EnderecoResource:getEndereco] Exception for the cep %s with error: %s",
-                    cep, e.getMessage()));
-//            e.printStackTrace();
+            logger.error(format("[EnderecoResource:getEndereco] Exception for the cep %s with error: %s Thrown: ",
+                    cep, e.getMessage()), e);
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
     }
@@ -72,5 +69,4 @@ public class EnderecoResource {
                             .withUf(enderecoERP.getUf())
                             .build();
     }
-
 }

@@ -7,20 +7,20 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * &lt;p&gt;Classe Java de statusCartao.
+ * <p>Classe Java de statusCartao.
  * 
- * &lt;p&gt;O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
- * &lt;pre&gt;
- * &amp;lt;simpleType name="statusCartao"&amp;gt;
- *   &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&amp;gt;
- *     &amp;lt;enumeration value="Desconhecido"/&amp;gt;
- *     &amp;lt;enumeration value="Normal"/&amp;gt;
- *     &amp;lt;enumeration value="Suspenso"/&amp;gt;
- *     &amp;lt;enumeration value="Cancelado"/&amp;gt;
- *     &amp;lt;enumeration value="Irregular"/&amp;gt;
- *   &amp;lt;/restriction&amp;gt;
- * &amp;lt;/simpleType&amp;gt;
- * &lt;/pre&gt;
+ * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <pre>
+ * &lt;simpleType name="statusCartao"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="Desconhecido"/&gt;
+ *     &lt;enumeration value="Normal"/&gt;
+ *     &lt;enumeration value="Suspenso"/&gt;
+ *     &lt;enumeration value="Cancelado"/&gt;
+ *     &lt;enumeration value="Irregular"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "statusCartao")

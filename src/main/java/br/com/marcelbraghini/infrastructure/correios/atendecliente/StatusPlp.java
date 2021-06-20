@@ -7,18 +7,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * &lt;p&gt;Classe Java de statusPlp.
+ * <p>Classe Java de statusPlp.
  * 
- * &lt;p&gt;O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
- * &lt;pre&gt;
- * &amp;lt;simpleType name="statusPlp"&amp;gt;
- *   &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&amp;gt;
- *     &amp;lt;enumeration value="Aberta"/&amp;gt;
- *     &amp;lt;enumeration value="Fechada"/&amp;gt;
- *     &amp;lt;enumeration value="Postada"/&amp;gt;
- *   &amp;lt;/restriction&amp;gt;
- * &amp;lt;/simpleType&amp;gt;
- * &lt;/pre&gt;
+ * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <pre>
+ * &lt;simpleType name="statusPlp"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="Aberta"/&gt;
+ *     &lt;enumeration value="Fechada"/&gt;
+ *     &lt;enumeration value="Postada"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "statusPlp")

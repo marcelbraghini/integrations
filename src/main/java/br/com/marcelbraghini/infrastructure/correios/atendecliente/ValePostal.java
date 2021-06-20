@@ -9,48 +9,48 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * &lt;p&gt;Classe Java de valePostal complex type.
+ * <p>Classe Java de valePostal complex type.
  * 
- * &lt;p&gt;O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
- * &lt;pre&gt;
- * &amp;lt;complexType name="valePostal"&amp;gt;
- *   &amp;lt;complexContent&amp;gt;
- *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
- *       &amp;lt;sequence&amp;gt;
- *         &amp;lt;element name="cidNoCidade" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="ctcCoAadministrativo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="ctcNuContrato" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="ctcNuContratoEct" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="cvpEdBairro" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="cvpEdCliente" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="cvpEdComplemento" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="cvpEdNumero" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="cvpNoCliente" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="cvpNuCep" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="descricaoErro" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="estSgEstado" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="monVarTarifaAdicional" type="{http://www.w3.org/2001/XMLSchema}int"/&amp;gt;
- *         &amp;lt;element name="monVarTarifaServico" type="{http://www.w3.org/2001/XMLSchema}int"/&amp;gt;
- *         &amp;lt;element name="monVarValorDescontos" type="{http://www.w3.org/2001/XMLSchema}int"/&amp;gt;
- *         &amp;lt;element name="monVarValorImposto" type="{http://www.w3.org/2001/XMLSchema}int"/&amp;gt;
- *         &amp;lt;element name="prsCoProdutoServico" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="pveNu" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="pveOrgNuAgencia" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="pveOrgNuAgenciaDes" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="pveOrgNuAgenciaOri" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="retornaCodErro" type="{http://www.w3.org/2001/XMLSchema}int"/&amp;gt;
- *         &amp;lt;element name="sitNoSituacao" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="tlgTxDescricao" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="vapDhTransacao" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="vapNuEtiquetaEncomenda" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="vapVrCobradoEct" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/&amp;gt;
- *         &amp;lt;element name="vapVrNominal" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/&amp;gt;
- *       &amp;lt;/sequence&amp;gt;
- *     &amp;lt;/restriction&amp;gt;
- *   &amp;lt;/complexContent&amp;gt;
- * &amp;lt;/complexType&amp;gt;
- * &lt;/pre&gt;
+ * <pre>
+ * &lt;complexType name="valePostal"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="cidNoCidade" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="ctcCoAadministrativo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="ctcNuContrato" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="ctcNuContratoEct" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="cvpEdBairro" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="cvpEdCliente" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="cvpEdComplemento" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="cvpEdNumero" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="cvpNoCliente" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="cvpNuCep" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="descricaoErro" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="estSgEstado" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="monVarTarifaAdicional" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="monVarTarifaServico" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="monVarValorDescontos" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="monVarValorImposto" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="prsCoProdutoServico" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="pveNu" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="pveOrgNuAgencia" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="pveOrgNuAgenciaDes" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="pveOrgNuAgenciaOri" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="retornaCodErro" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="sitNoSituacao" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="tlgTxDescricao" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="vapDhTransacao" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
+ *         &lt;element name="vapNuEtiquetaEncomenda" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="vapVrCobradoEct" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/&gt;
+ *         &lt;element name="vapVrNominal" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
  * 
  * 
  */

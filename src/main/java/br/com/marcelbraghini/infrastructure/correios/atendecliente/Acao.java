@@ -6,19 +6,19 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * &lt;p&gt;Classe Java de acao.
+ * <p>Classe Java de acao.
  * 
- * &lt;p&gt;O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
- * &lt;pre&gt;
- * &amp;lt;simpleType name="acao"&amp;gt;
- *   &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&amp;gt;
- *     &amp;lt;enumeration value="DEVOLVIDO_AO_REMETENTE"/&amp;gt;
- *     &amp;lt;enumeration value="ENCAMINHADO_PARA_REFUGO"/&amp;gt;
- *     &amp;lt;enumeration value="REINTEGRADO_E_DEVOLVIDO_AO_REMETENTE"/&amp;gt;
- *     &amp;lt;enumeration value="DESBLOQUEADO"/&amp;gt;
- *   &amp;lt;/restriction&amp;gt;
- * &amp;lt;/simpleType&amp;gt;
- * &lt;/pre&gt;
+ * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <pre>
+ * &lt;simpleType name="acao"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="DEVOLVIDO_AO_REMETENTE"/&gt;
+ *     &lt;enumeration value="ENCAMINHADO_PARA_REFUGO"/&gt;
+ *     &lt;enumeration value="REINTEGRADO_E_DEVOLVIDO_AO_REMETENTE"/&gt;
+ *     &lt;enumeration value="DESBLOQUEADO"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "acao")

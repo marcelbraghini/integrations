@@ -7,19 +7,19 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * &lt;p&gt;Classe Java de statusObjetoPostal.
+ * <p>Classe Java de statusObjetoPostal.
  * 
- * &lt;p&gt;O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
- * &lt;pre&gt;
- * &amp;lt;simpleType name="statusObjetoPostal"&amp;gt;
- *   &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&amp;gt;
- *     &amp;lt;enumeration value="EmBranco"/&amp;gt;
- *     &amp;lt;enumeration value="Postado"/&amp;gt;
- *     &amp;lt;enumeration value="Cancelado"/&amp;gt;
- *     &amp;lt;enumeration value="Estorno"/&amp;gt;
- *   &amp;lt;/restriction&amp;gt;
- * &amp;lt;/simpleType&amp;gt;
- * &lt;/pre&gt;
+ * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <pre>
+ * &lt;simpleType name="statusObjetoPostal"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="EmBranco"/&gt;
+ *     &lt;enumeration value="Postado"/&gt;
+ *     &lt;enumeration value="Cancelado"/&gt;
+ *     &lt;enumeration value="Estorno"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
  * 
  */
 @XmlType(name = "statusObjetoPostal")
