@@ -41,7 +41,7 @@ public class EnderecoResourceTest {
         Endereco endereco = (Endereco) response.getEntity();
 
         assertEquals(Response.Status.OK, response.getStatusInfo());
-        assertEquals(enderecoERP.getCep(), endereco.getUf());
+        assertEquals(enderecoERP.getCep(), endereco.getCep());
         assertEquals(enderecoERP.getUf(), endereco.getUf());
         assertEquals(enderecoERP.getCidade(), endereco.getCidade());
     }
